@@ -1,0 +1,36 @@
+Write a blog on Difference between HTTP1.1 vs HTTP2:
+What is HTTP?
+HTTP stands for Hypertext Transfer Protocol. It is the foundation of the World Wide Web and it is used in all browsers to load web pages.
+Browser sends an HTTP request to web server when navigating to an URL. The HTTP command then provides an HTTP response to the web server with the webpage contents.
+Browser -> URL -> Database
+Browser <- webpage <- Database
+What is HTTP/2?
+HTTP/2 is the upgrade version of HTTP, and it was launched in the year 2015 by the Internet Engineering Task Force (IETF). 
+key differences between HTTP/2 has to HTTP/1 are
+1) In HTTP/1 data is transferred in text format but in HTTP/2 uses binary protocol.
+2) HTTP/2 is fully multiplexed, instead of ordered and blocking: if I am downloading a file and it has multiple recourses, HTTP/1 will wait for one file to finish downloading before starting the next file but HTTP/2 supports multiplexing, which allows multiple files to be downloaded simultaneously.
+3) HTTP/2 uses header compression to reduce overhead with helps to improve overall performance.
+4) HTTP/2 allows Server Pushing to add responses proactively into the Browser cache.
+5)HTTP/2 can use one connection for parallelism allowing multiple requests and responses to occur concurrently
+
+Write a blog about objects and its internal representation in Javascript
+
+Objects in JavaScript are reference data types, storing a reference or pointer to the location in memory where the object resides. Loosely defined as an unordered collection of related data in the form of "key: value" pairs, objects can include properties (variables) and methods (functions).
+ex:
+let car(){
+	name: "Tata";
+	model: "Nexon";
+	colour: "Red";
+};
+
+var result = function (arr) {
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] % 2 != 0) {
+            console.log("Anonymous Function: " + arr[i]);
+          }
+        }
+      };
+
+In JavaScript we can create a object using object literal
+ex:
+let model = {name: 'Tata', model:'Nexon', colour:'Red'};
