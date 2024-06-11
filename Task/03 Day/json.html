@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function compareJSON(objA, objB) {
+        const JSONA = JSON.stringify(objA, Object.keys(objA).sort());
+        const JSONB = JSON.stringify(objB, Object.keys(objB).sort());
+
+        return JSONA === JSONB;
+      }
+
+      const obj1 = {
+        name: "Kamal",
+        age: 10,
+      };
+
+      const obj2 = {
+        age: 10,
+        name: "Kamal",
+      };
+
+      console.log(compareJSON(obj1, obj2));
+    </script>
+  </body>
+</html>
