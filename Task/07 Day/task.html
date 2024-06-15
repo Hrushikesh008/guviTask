@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      const req = new XMLHttpRequest();
+      req.open("GET", "https://restcountries.com/v3.1/all", true);
+      req.send();
+
+      req.onload = function () {
+        const apiUrl = "https://restcountries.com/v3.1/all";
+
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            // Get all the countries from Asia continent /region using Filter method
+            const getCountriesFromAsia = data.filter(
+              (country) => country.region === "Asia"
+            );
+
+            getCountriesFromAsia.forEach((country) => {
+              console.log(`Country from Asia: ${country.name.common}`);
+            });
+
+            // Get all the countries with a population of less than 2 lakhs using Filter method
+            const getPopulation = data.filter(
+              (country) => country.population < 200000
+            );
+
+            getPopulation.forEach((people) => {
+              console.log(
+                `Country population less then 2L: ${people.name.common}`
+              );
+            });
+
+            //Print the following details name, capital, flag, using forEach method
+            const getCountries = data.filter((country) => country.region);
+
+            getCountriesFromAsia.forEach((country) => {
+              console.log(`Name: ${country.name.common}`);
+              console.log(`Capital: ${country.capital}`);
+              console.log(`Flag: ${country.flags.png}`);
+            });
+
+            //Print the total population of countries using reduce method
+            const totalPopulation = data.reduce(
+              (acc, country) => acc + country.population,
+              0
+            );
+
+            console.log(`Total Population: ${totalPopulation}`);
+
+            //Print the country that uses US dollars as currency.
+
+            const getCurrencyUSD = data.filter(
+              (country) => country.currencies && country.currencies.USD
+            );
+
+            getCurrencyUSD.forEach((country) => {
+              console.log(
+                `the country that uses US dollars as currency: ${country.name.common}`
+              );
+            });
+
+          });
+      };
+    </script>
+  </body>
+</html>
