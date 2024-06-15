@@ -1,0 +1,19 @@
+What is window object?
+    It is a global object that represents an open window in browser.
+    If the document contains frames browser will create one window object for the HTML document and for each frame additional window will be added.
+    It is used for browser task like opening new window or tab.
+    It has propertys such as closed, console, document, ect
+    It has method such as alert(), blur(), close() and ect
+
+What is document object?
+    DOM is a programming interface for HTML and XML documents. 
+    It represents the entire web page.  When HTML document is loaded into a browser window, it becomes a document object.
+    Using HTML DOM, JavaScript can access and change all the elements of document. 
+    For example:
+    Change all the HTML elements, attribute, CSS in the page
+
+Diffrents between window object and document object
+
+    The document object operates within the scope of the current HTML document, focusing on its structure and content. The window object operates globally, affecting the entire browser environment.
+    Document is primarily used for DOM manipulation and accessing elements within the document, while window handles browser-specific tasks like navigation and timing.
+    The document object is a property of the window object. You can access it as window.document or simply document.
