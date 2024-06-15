@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Movie {
+        constructor(title, studio, rating = "PG") {
+          this.title = title;
+          this.studio = studio;
+          this.rating = rating;
+        }
+
+        static getPG(movies) {
+          return movies.filter((movie) => movie.rating === "PG");
+        }
+      }
+
+      // Creating an instance of the class Movie
+      const film = new Movie(
+        "Casino Royale",
+        "Eon Productions",
+        "PG-13"
+      );
+      console.log(film);
+
+      const movies = [
+        new Movie("Casino Royale", "Eon Productions", "PG"),
+        new Movie("Casino", "Eon", "R"),
+        new Movie("Royale", "Productions", "PG-13"),
+        new Movie("Eon", "Royale", "PG"),
+      ];
+
+      const pgMovies = Movie.getPG(movies);
+      console.log(pgMovies);
+    </script>
+  </body>
+</html>

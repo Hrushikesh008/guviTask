@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class UberPrice {
+        constructor(basePrice, chardePerKM, waitCharge) {
+          this.basePrice = basePrice;
+          this.chargePerKM = chardePerKM;
+          this.waitChargePerKm = waitChargePerKm;
+        }
+
+        extraCharge(distance, waitTime) {
+          const distanceCharge = this.chargePerKM * distance;
+          const waitTimeCharge = this.waitChargePerKm * waitTime;
+          return console.log(`Total distance Charge: ${distance} Rs`),
+          console.log(`Total wait Charge: ${waitTimeCharge} Rs`)
+        }
+
+        totalCharge(distance, waitTime) {
+          const distanceCharge = this.chargePerKM * distance;
+          const waitTimeCharge = this.waitChargePerKm * waitTime;
+          const totalCost = basePrice + distanceCharge + waitTimeCharge;
+          return totalCost;
+        }
+
+      }
+
+      const basePrice = 10;
+      const chargePerKM = 5;
+      const waitChargePerKm = 2;
+      const uberPrice = new UberPrice(basePrice, chargePerKM, waitChargePerKm);
+      const distance = 20;
+      const waitTime = 5;
+      
+      uberPrice.extraCharge(distance,waitTime);
+      const totalCost = uberPrice.totalCharge(distance, waitTime);
+      console.log(`Total cost: ${totalCost} Rs`);
+    </script>
+  </body>
+</html>

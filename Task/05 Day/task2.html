@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const data = {
+        movie: "Casino Royale",
+        production: "Eon Productions",
+        rating: "PG-13",
+        genres: ["comedy", "Crime"],
+      };
+
+      // FOR LOOP
+      let a = 1;
+      for (let b = 0; b > a; b++) {
+        console.log(key, data[key]);
+      }
+
+      //FOR IN LOOP
+      for (let key in data) {
+        console.log(key, data[key]);
+      }
+
+      // FOR OF LOOP
+      for (let genres of data.genres) {
+        console.log(genres);
+      }
+
+      //FOR EACH LOOP
+      data.genres.forEach((genres) => {
+        console.log(genres);
+      });
+    </script>
+  </body>
+</html>
