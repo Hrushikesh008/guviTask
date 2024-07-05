@@ -36,8 +36,8 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-
 }
+
 .sold-out {
     background-color: #dc3545;
 }
